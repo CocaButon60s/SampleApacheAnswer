@@ -1,0 +1,12 @@
+version: '3'
+tasks:
+  gen:
+    cmds:
+      - |
+        mkdir -p certs
+        openssl req -x509 -newkey ec -pkeyopt ec_paramgen_curve:P-256 -nodes \
+          -keyout certs/me.key -out certs/me.crt -days 36500 -subj "/CN=192.168.1.2" \
+          -addext "subjectAltName=IP:192.168.1.2"
+  show:
+    cmds:
+      - openssl x509 -in certs/me.crt -noout -text
