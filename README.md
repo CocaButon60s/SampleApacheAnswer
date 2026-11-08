@@ -2,7 +2,8 @@
 
 ## answer service
 
-```/data/conf/config.yaml
+/data/conf/config.yaml
+```yaml: /data/conf/config.yaml
 ...
 swaggerui:
   show: true
